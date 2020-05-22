@@ -7,6 +7,7 @@ const app=express();
 
 const request = require('request');
 const bodyparser=require('body-parser');
+const mongoose=require('./config/mongoose');
  
 
 app.use(bodyparser.urlencoded());

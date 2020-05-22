@@ -25,7 +25,32 @@ app.set('views','./views');
 
    //app.use(flash());
 
-  app.use(customM.serverCrash);
+app.use(function(req,res,next){
+
+  console.log('into middleware');
+    
+    
+
+  process.on('exit', function(code) {
+
+
+     console.log(`About to exit with code ${code}`);
+
+       console.log(res.send);
+ 
+       return res.send("server crash");
+          
+        
+    
+      
+
+});
+
+next();
+          
+
+});
+
 
   //app.use(setFlash.setFlash);
 
@@ -34,12 +59,10 @@ app.set('views','./views');
 
   
 
-    var server = app.listen(process.env.PORT || 6000, function () {
-      
-        var port = server.address().port;
-        console.log("Express is working on port " + port);
-        
-      });
+    app.listen(200, function(){
 
+      console.log('server runnig on 200');
 
-    
+    })
+
+     

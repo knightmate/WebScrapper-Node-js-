@@ -29,12 +29,7 @@ app.set('views','./views');
 
   //app.use(setFlash.setFlash);
 
-  app.use('/', function(req,res,){
-      
-    res.send("server is ohk");
-
-    
-    });
+  app.use('/', require('./routers'));
 
 
   

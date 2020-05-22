@@ -9,7 +9,7 @@ module.exports.serverCrash=(req,res,next)=>
         
        
           // return res.render('home');
- 
+              
          return res.send(`<h2>Server Crash</h2>`);
              
         

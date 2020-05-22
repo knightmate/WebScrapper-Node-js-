@@ -7,7 +7,7 @@ const app=express();
 
 const request = require('request');
 const bodyparser=require('body-parser');
-const mongoose=require('./config/mongoose');
+//const mongoose=require('./config/mongoose');
  const customM=require('./config/middleware');
  const flash=require('connect-flash');
 const setFlash=require('./config/setFlash');

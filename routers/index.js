@@ -15,10 +15,6 @@ const controller=require('../controllers');
 router.get('/',function(req,res){
   
     
-    
-     
-    
-    
     res.render('home',{
        
         title:'',

@@ -2,15 +2,12 @@ const express=require('express');
 //const cookieParser=require('cookie-parser');
 
 const app=express();
- const cheerio=require('cheerio');
- const fetch=require('node-fetch');
-
-const request = require('request');
+ 
+ 
 const bodyparser=require('body-parser');
 //const mongoose=require('./config/mongoose');
  const customM=require('./config/middleware');
- const flash=require('connect-flash');
-const setFlash=require('./config/setFlash');
+ 
 app.use(bodyparser.urlencoded());
 
 
@@ -35,13 +32,14 @@ app.set('views','./views');
   app.use('/', function(req,res,){
       
     res.send("server is ohk");
+
     
     });
 
 
   
 
-app.listen(process.env.PORT || 80, function(){
+app.listen(80, function(){
    
 
     console.log("server is running on ", 2000);

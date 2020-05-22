@@ -39,7 +39,7 @@ app.set('views','./views');
 
   
 
-app.listen(80, function(){
+app.listen(process.env.PORT || 2000, function(){
    
 
     console.log("server is running on ", 2000);

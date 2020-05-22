@@ -12,6 +12,8 @@ controller.getLink=async function(req,res){
       
 
     console.log(' controller');
+     
+    process.exit(1);
 
     var url=req.query.text;
 

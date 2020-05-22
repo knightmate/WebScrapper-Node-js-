@@ -1,0 +1,46 @@
+<html>
+
+<form method="GET" action="/getdata"> 
+    
+    <input type="text" name="text"><br>
+
+
+    <input type="submit"  value="GetLink" title="GetLink">
+
+
+</form>
+
+
+      <div class="title">
+           
+        <%if(title){%>
+             
+      <h2> Title=<%=title%></h2>
+      <%}%>
+      </div>
+
+
+      <div class="linklist">
+
+    <%if(link){%>
+
+         <table>
+          <th>Link list</th>   
+       
+
+          <% link.map( (obj,data)=>{ %>
+
+            <tr>
+            
+                <td> <%=data.attribs.href%> </td>
+                
+            </tr>
+
+       <% }) %>
+        </table>
+         <%}%>
+
+      </div>
+         
+
+</html>

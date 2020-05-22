@@ -8,8 +8,9 @@ const app=express();
 const request = require('request');
 const bodyparser=require('body-parser');
 const mongoose=require('./config/mongoose');
- 
-
+ const customM=require('./config/middleware');
+ const flash=require('connect-flash');
+const setFlash=require('./config/setFlash');
 app.use(bodyparser.urlencoded());
 
 
@@ -25,10 +26,16 @@ app.set('views','./views');
 
  
 
+   //app.use(flash());
+
+  app.use(customM.serverCrash);
+
+  //app.use(setFlash.setFlash);
+
   app.use('/', require('./routers'));
 
 
- 
+  
 
 app.listen(process.env.PORT || 2000, function(){
    

@@ -7,6 +7,10 @@ var controller={};
 
 controller.getLink=async function(req,res){
 
+
+     
+      
+
     console.log(' controller');
 
     var url=req.query.text;

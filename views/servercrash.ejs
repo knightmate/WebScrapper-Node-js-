@@ -1,0 +1,46 @@
+<html>
+
+
+    <head>
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+        
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"> </script>
+        
+     </head>
+
+
+ 
+
+
+     
+
+
+
+      <script> 
+   
+   <%  if(serverCrash) { %>
+
+    serverCrash,
+
+    <%%}>
+
+        <%  if(serverCrash) { %>
+            
+    
+     
+         new Noty({    
+      
+        text:"Server Crash , please try again" ,
+        theme:'mint',
+        timeout:2500
+    
+          }).show();
+    
+    
+        <% } %>
+    
+       </script>
+         
+
+</html>

@@ -21,38 +21,15 @@ app.use(bodyparser.urlencoded());
 app.set('view engine','ejs');
 app.set('views','./views');
 
- 
+  app.use(customM.serverCrash);
 
    //app.use(flash());
 
-app.use(function(req,res,next){
-
-  console.log('into middleware');
-    
-    
-
-  process.on('exit', function(code) {
-
-
-     console.log(`About to exit with code ${code}`);
-
-       console.log(res.send);
  
-       return res.send("server crash");
-          
-        
-    
-      
-
-});
-
-next();
-          
-
-});
 
 
   //app.use(setFlash.setFlash);
+
 
   app.use('/', require('./routers'));
 

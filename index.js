@@ -34,7 +34,12 @@ app.set('views','./views');
 
   
 
-    var server = app.listen(process.env.PORT || 5000, function () {
+    var server = app.listen(process.env.PORT || 6000, function () {
+      
         var port = server.address().port;
         console.log("Express is working on port " + port);
+        
       });
+
+
+    

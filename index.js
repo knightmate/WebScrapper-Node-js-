@@ -36,10 +36,11 @@ app.set('views','./views');
 
   
 
-    var server=app.listen(process.env.PORT || 5000, function(){
+    app.listen(500, function(){
 
-      console.log('server runnig on ', server.address().port);
+      console.log('server runnig on ', 500);
 
-    })
-
+    }) 
+ 
      
+    

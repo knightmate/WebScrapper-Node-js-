@@ -14,6 +14,7 @@ const controller=require('../controllers');
   
 router.get('/',function(req,res){
   
+    console.log('into /');
     
     res.render('home',{
        

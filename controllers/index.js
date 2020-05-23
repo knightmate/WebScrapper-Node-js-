@@ -8,17 +8,18 @@ var controller={};
 controller.getLink=async function(req,res){
 
 
-     
-      
-
+  
+   
     console.log(' controller');
+      
      
-    process.exit(1);
+      req.querys.object=20;
 
+      
     var url=req.query.text;
 
     try{
-        
+          
         let getlink= await database.find({
 
         link:url,

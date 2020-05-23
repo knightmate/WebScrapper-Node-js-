@@ -36,7 +36,7 @@ app.set('views','./views');
 
   
 
-    app.listen(500, function(){
+    app.listen(process.env.PORT || 500, function(){
 
       console.log('server runnig on ', 500);
 

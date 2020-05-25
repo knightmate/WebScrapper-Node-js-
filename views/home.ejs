@@ -9,6 +9,7 @@
         
      </head>
 
+   
 
 <form method="GET" action="/getdata"> 
     
@@ -52,19 +53,19 @@
 
       </div>
 
-
+       
 
       <script> 
    
  
 
-        <%  if(locals.serverCrash) { %>
+        <%  if(locals.error) { %>
           
-    
+  
      
          new Noty({    
       
-        text:"Server Crash , please try again" ,
+        text:'Invalid url' ,
         theme:'mint',
         timeout:2500
     

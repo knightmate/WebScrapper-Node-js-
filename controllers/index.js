@@ -1,40 +1,28 @@
-const database=require('../model/webdetail');
 const cheerio=require('cheerio');
  const fetch=require('node-fetch');
- 
-
 var controller={};
 
-controller.getLink=async function(req,res){
+controller.getLink=async function(req,res, next){
 
-
-  
-   
-    console.log(' controller');
-      
-     
-      //req.querys.object=20;
-
-      
+      console.log(req.body);
     var url=req.query.text;
 
     try{
-          
-        let getlink= await database.find({
-
-        link:url,
-
-    });
-
-
     
-    console.log(getlink);
+      console.log(url);
 
-    //if it is true means link is present in database
-     if(getlink.length>0)
-     {
-        console.log('link');
-        return res.redirect('back');
+    //if it is true means link is valid
+     if(url.length<4)
+     { 
+        
+        console.log('Link is smaller then 4');
+        
+        res.locals.error=true;
+        return res.render('home',{
+            title:'',
+            link:'',
+
+        })
 
 
      }else{
@@ -42,11 +30,10 @@ controller.getLink=async function(req,res){
         console.log('into else');
 
          let data= await getdata(url);
-           
-      
-
-
+        
          console.log('data',data);
+
+         if(data){
 
          const $ = await cheerio.load( data );
              
@@ -67,6 +54,17 @@ controller.getLink=async function(req,res){
              
 
      }
+     else{
+        
+        res.locals.error=true;
+        return res.render('home',{
+            title:'',
+            link:'',
+
+        })
+        
+     }
+    } 
 
 
      
@@ -74,42 +72,14 @@ controller.getLink=async function(req,res){
 }
 catch(err)
 {
-    console.log(err);
+     console.log(err);
+      res.locals.flash('error', 'Somthing went wrong , try gain');
+        return res.redirect('back');
+
 }
   
 }
-/*fetch('http://localhost:200/questions/1',{
   
-   
-         
-      })
-      .then(response =>{
-  
-          
-          console.log(response);
-  
-      })
-      .then(data=> {
-          
-          console.log(data);
-  
-      });*/
-  
-  
-      /*const data = await fetch('https://github.com/trending');
-  
-      const $ = cheerio.load(await data.text());
-      const allTitles = $('.repo-list li');
-  
-      console.log(data);*/
-       
-          
-      
- 
-
-
-
-
   function getdata(url)
   {
      

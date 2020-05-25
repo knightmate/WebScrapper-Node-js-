@@ -16,9 +16,7 @@ let web = new webdetail({
 
     },
 
-    link:[{
-        type:String
-    }]
+     
     
 },
  {timestamps: true});

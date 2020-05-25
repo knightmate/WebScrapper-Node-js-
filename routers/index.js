@@ -1,9 +1,5 @@
 const express=require('express');
 //const cookieParser=require('cookie-parser');
-const cheerio=require('cheerio');
- const fetch=require('node-fetch');
-
-const request = require('request');
 const router=express.Router()
 const controller=require('../controllers');
 
@@ -16,6 +12,7 @@ router.get('/',function(req,res){
   
     console.log('into /');
     
+     
     res.render('home',{
        
         title:'',

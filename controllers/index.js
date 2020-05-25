@@ -4,15 +4,17 @@ var controller={};
 
 controller.getLink=async function(req,res, next){   
     var url=req.query.text;
+    
     try{
     
       console.log(url);
 
     //if it is true means link is valid
-     if(url.length<4)
+    console.log(validURL(url));
+     if(! validURL(url) )
      { 
         
-        console.log('Link is smaller then 4');
+        console.log('INVALID URL');
         
         res.locals.error=true;
         return res.render('home',{
@@ -110,6 +112,11 @@ catch(err)
   }
 
 
+  function validURL(str) {
+    if(str.length>3 && str.includes(".com"))
+    return true;
+    return false;
+  }
    
 
   module.exports=controller;

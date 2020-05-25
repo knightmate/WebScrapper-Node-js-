@@ -21,14 +21,14 @@ app.set('views','./views');
   app.use('/', require('./routers'));
 
 
-  
+   
 
-    app.listen(process.env.PORT ||1200, function(){
+    let server=app.listen(process.env.PORT || 1200, function(){
 
-      console.log('server runnig on ', 1200);
+      console.log('server runnig on ',1200);
 
 
     }) 
  
-     
+      
     

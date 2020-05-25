@@ -2,11 +2,8 @@ const cheerio=require('cheerio');
  const fetch=require('node-fetch');
 var controller={};
 
-controller.getLink=async function(req,res, next){
-
-      console.log(req.body);
+controller.getLink=async function(req,res, next){   
     var url=req.query.text;
-
     try{
     
       console.log(url);

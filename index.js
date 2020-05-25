@@ -5,7 +5,7 @@ const app=express();
  
  
 const bodyparser=require('body-parser');
-//const mongoose=require('./config/mongoose');
+const mongoose=require('./config/mongoose');
  const customM=require('./config/middleware');
  
 app.use(bodyparser.urlencoded());
@@ -39,6 +39,7 @@ app.set('views','./views');
     app.listen(process.env.PORT || 500, function(){
 
       console.log('server runnig on ', 500);
+
 
     }) 
  

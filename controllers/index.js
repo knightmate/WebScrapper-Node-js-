@@ -13,7 +13,7 @@ controller.getLink=async function(req,res){
     console.log(' controller');
       
      
-      req.querys.object=20;
+      //req.querys.object=20;
 
       
     var url=req.query.text;
@@ -34,6 +34,7 @@ controller.getLink=async function(req,res){
      if(getlink.length>0)
      {
         console.log('link');
+        return res.redirect('back');
 
 
      }else{
